@@ -1,2 +1,11 @@
-<h1>Companies#index</h1>
-<p>Find me in app/views/companies/index.html.erb</p>
+<h1>Companies</h1>
+<%= link_to "New product", new_company_path %>
+
+<div id="companies">
+  <% @companies.each do |company| %>
+    <div>
+      Company name: <a href="/companies/<%= company.id %>"><%=company.name %></a> <br>
+      Company website:  <%=company.website %>
+    </div>
+  <% end %>
+</div>
