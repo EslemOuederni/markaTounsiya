@@ -1,4 +1,14 @@
-<h1><%= @company.name %></h1>
-<p>It has 0 products</p>
-<%= link_to "Back", companies_path %>
-<%= link_to "Edit", edit_company_path(@company) %>
+<p><%= link_to "Back", companies_path %></p>
+
+<section class="product">
+
+  <section class="product-info">
+    <% cache @company do %>
+      <h1><%= @company.name %></h1>
+      <a href="<%= @company.website %>"><%= @company.website %></a>
+    <% end %>
+
+
+      <%= link_to "Edit", edit_company_path(@company) %>
+  </section>
+</section>

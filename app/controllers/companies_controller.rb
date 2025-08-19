@@ -1,12 +1,11 @@
 class CompaniesController < ApplicationController
-    before_action :set_product, only: %i[ show edit update ]
+    before_action :set_company, only: %i[ show edit update ]
   def index
     @companies = Company.all
   end
   def show
-    @company = Company.find(params[:id])
   end
-   def new
+  def new
     @company = Company.new
   end
 
@@ -30,11 +29,10 @@ class CompaniesController < ApplicationController
     end
   end
   private
-    def set_product
-      @product = Product.find(params[:id])
+    def set_company
+      @company = Company.find(params[:id])
     end
     def company_params
       params.expect(company: [ :name, :website ])
     end
-
 end
