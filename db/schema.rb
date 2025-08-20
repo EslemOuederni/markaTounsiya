@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_18_214444) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_19_124451) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "company_id", null: false
+    t.index ["company_id"], name: "index_products_on_company_id"
+  end
+
+  add_foreign_key "products", "companies"
 end

@@ -63,3 +63,7 @@ group :test do
 end
 
 gem "ruby-lsp", "~> 0.26.1"
+
+gem "tailwindcss-rails", "~> 4.3"
+
+gem "tailwindcss-ruby", "~> 4.1"

@@ -1,0 +1,17 @@
+<h2>New Product for <%= @company.name %></h2>
+
+<%= form_with model: [@company, @product] do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Product" %>
+  </div>
+<% end %>
